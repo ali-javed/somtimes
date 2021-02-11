@@ -1,0 +1,3 @@
+
+Numpy
+Python >3.6
