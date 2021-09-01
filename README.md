@@ -1,9 +1,9 @@
-# Time Series Self Organizing Map (Somtimes)
+# SOMTimeS: Self-Organizing Maps for TIME Series
 
 
 
 ## Other relevant papers
-If you use this code please cite the time series clustering benchmark
+If you use this code please cite SOMTimeS paper.
 
 @misc{javed2021somtimes,
       title={SOMTimeS: Self Organizing Maps for Time Series Clustering and its Application to Serious Illness Conversations}, 
