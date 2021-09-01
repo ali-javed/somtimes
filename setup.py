@@ -24,7 +24,7 @@ CLASSIFIERS = [
 setuptools.setup(
     name="somtimes",
     version=__version__,
-    description="Python implementation of Self Organizing Map with capability to use Dynamic Time Warping (DTW) as a distance measure.",
+    description="Python implementation of SOMTimeS: Self Organizing Map for Time Series",
     long_description = "",
     author="A. Javed",
     author_email="alijaved@live.com",
