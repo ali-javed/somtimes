@@ -130,7 +130,7 @@ class SelfOrganizingMap:
             weights = copy.deepcopy(self.weights_Kohonen[i])
             xCopy = copy.deepcopy(x)
             #get dtw distance
-            distance = dtw.distance_fast(xCopy,weights, window = windowSize, use_pruning=True)
+            distance = dtw.distance_fast(xCopy,weights, window = windowSize+1, use_pruning=True)
             
             dtw_Cals+=1
             #update min distance if new distance is lower
@@ -382,7 +382,7 @@ class SelfOrganizingMap:
             distance_matrix = np.zeros((len(self.weights_Kohonen),len(self.weights_Kohonen)))
             for a in range(0,len(self.weights_Kohonen)):
                 for b in range(a+1,len(self.weights_Kohonen)):
-                    distance_matrix[a,b] = dtw.distance_fast(self.weights_Kohonen[a], self.weights_Kohonen[b], window=windowSize, use_pruning=True)
+                    distance_matrix[a,b] = dtw.distance_fast(self.weights_Kohonen[a], self.weights_Kohonen[b], window=windowSize+1, use_pruning=True)
                     distance_matrix[b,a] = distance_matrix[a,b]
             distance_matrix = np.asarray(distance_matrix)
 
@@ -463,7 +463,7 @@ class SelfOrganizingMap:
 
                 #for dtw
                 neighborWeights = normalizedWeights[neighbor]
-                distance = dtw.distance_fast(neighborWeights, nodeWeights, window=windowSize, use_pruning=True)
+                distance = dtw.distance_fast(neighborWeights, nodeWeights, window=windowSize+1, use_pruning=True)
                 #distance2 = np.sqrt(sum((nodeWeights.flatten()-neighborWeights.flatten())**2))
                 #temp.append(distance)
                 self.Umatrix[i,j] += distance
